@@ -27,10 +27,9 @@ def main():
     try:
         response = run_graph(config, user_input=args.extra.get("user_input"), session_id=args.extra.get("session_id"))
         print(response)
+        logger.info("Job completed successfully")
     except Exception as e:
-        logger.error(f"An error occurs:{e}")
+        logger.error(f"An error occurs:{e}", exc_info=True)
 
-    logger.info("Job completed successfully")
-    
 if __name__ == "__main__":
     main()
