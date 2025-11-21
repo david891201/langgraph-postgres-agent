@@ -48,20 +48,20 @@ CREATE DATABASE chat_history;
 postgresql://postgres:<your_password>@<your_host>:<your_port>/chat_history
 ```
 
-## 使用方法
-### 啟動 api 
+### 使用方法
+#### 啟動 api 
 ```text 
 bash bin/start_server.sh
 ```
-### 單純測試記憶功能 
+#### 單純測試記憶功能 
 ```text
 bash bin/run_agent.sh --user_input "請給我台積電的股價資訊" --session_id 001
 ```
-#### 先問過一個問題後，再執行 
+##### 先問過一個問題後，再執行 
 ```text
 bash bin/run_agent.sh --user_input "請問我之前問過什麼問題" --session_id 001
 ```
-### 將股價資訊儲存至對應的 Milvus 資料庫
+#### 將股價資訊儲存至對應的 Milvus 資料庫
 ```text
 python -m bin.ingest_docs --stock_id "2454.TW" --collection_name "mtk_price"
 ``` 
