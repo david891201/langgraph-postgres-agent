@@ -73,22 +73,23 @@ langgraph-postgres-agent/
 ├── src/
 │   ├── agents/
 │   │   ├── state.py # 定義節點間傳遞的 state 結構
-│   │   ├── graph.py # 將所有 nodes 組成可執行的 graph
+│   │   └── graph.py # 將所有 nodes 組成可執行的 graph
 │   │   └── nodes/ # 個別節點邏輯（含記憶）
 │   │       ├── query_router.py # Query 分類，決定使用哪個 agent
 │   │       ├── simple_agent.py # 一般查詢（非股票相關）
 │   │       ├── tsmc_agent.py   # 台積電相關查詢
 │   │       └── mtk_agent.py    # 聯發科相關查詢
 │   ├── api/
-│   │   ├── server.py
+│   │   └── server.py
 │   ├── models/
-│   │   ├── model.py # 模型載入邏輯
+│   │   └──model.py # 模型載入邏輯
 │   ├── services/
 │   │   ├── milvus_service.py # 文件存入 Milvus邏輯
 │   │   └── stock_fetcher.py # 爬取個股歷史股價資訊
-│   └── utils/
-│       └── args_parser.py
+│   ├── utils/
+│       ├── args_parser.py
 │       └── utils.py
+│   └── main.py # 啟動 agent 的程式進入點
 │ 
 ├── bin/
 │   ├── run_agent.sh            # 啟動 agent
