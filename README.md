@@ -96,6 +96,9 @@ langgraph-postgres-agent/
 │   ├── start_server.sh         # 啟動 API server
 │   └── ingest_docs.py          # 一次性將文件塞入 Milvus 的腳本
 │
+├── conf/
+│   └── job.conf # 管理參數的文件
+│
 ├── logs/
 │
 ├── tests/
